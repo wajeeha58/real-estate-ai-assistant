@@ -1,0 +1,61 @@
+{
+  "name": "My workflow",
+  "nodes": [
+    {
+      "parameters": {
+        "httpMethod": "POST",
+        "path": "real-estate-ai",
+        "responseMode": "lastNode",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.webhook",
+      "typeVersion": 2.1,
+      "position": [
+        -416,
+        32
+      ],
+      "id": "3356deaf-466e-43b6-b25b-5ac644123545",
+      "name": "Webhook",
+      "webhookId": "22f7fce8-4ca9-4f2a-81f5-ceb0f13b20b7"
+    },
+    {
+      "parameters": {
+        "jsCode": "return [\n  {\n    json: {\n      output: \"Here are 3 2BHK options in Whitefield under ₹20,000:\\n1. Flat A – ₹18,000\\n2. Flat B – ₹19,500\\n3. Flat C – ₹17,800\"\n    }\n  }\n];"
+      },
+      "type": "n8n-nodes-base.code",
+      "typeVersion": 2,
+      "position": [
+        -208,
+        32
+      ],
+      "id": "9b02a40c-6960-44ed-b65a-c4517a99756f",
+      "name": "Code in JavaScript"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Webhook": {
+      "main": [
+        [
+          {
+            "node": "Code in JavaScript",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1",
+    "binaryMode": "separate"
+  },
+  "versionId": "3b40fc0a-3457-46d7-8fed-dca4f2449b62",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "12d297ceb787053117e575224a9a8bcdb5433116c725e88db5a6c4eb3ec7a8c4"
+  },
+  "id": "xGRyphXeN9PfUJTL",
+  "tags": []
+}
